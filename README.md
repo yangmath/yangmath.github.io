@@ -3,7 +3,7 @@ layout: default
 title: Conferences
 ---
 
-# Conferences
+# Mathematics Conference Series hosted by Yunnan Normal University
 
 ![Wide conference image](.ysd.jpg)
 
