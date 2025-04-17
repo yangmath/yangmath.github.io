@@ -17,3 +17,6 @@ title: Conferences
 
 - [XXXX](https://example.com)
 
+<p style="font-size: 10px; text-align: center; color: gray;">
+  Last updated: {{ site.time | date: "%B %d, %Y" }}
+</p>
