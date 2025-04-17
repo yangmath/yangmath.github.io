@@ -1,28 +1,73 @@
----
-layout: default
-title: Conferences
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Conferences</title>
+  <style>
+    body {
+      background: white;
+      font-family: serif;
+      font-size: 16px;
+      margin: 2em auto;
+      max-width: 800px;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      margin-top: 2em;
+    }
+    .location {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 2em;
+    }
+    .conference-list {
+      margin-left: 1em;
+    }
+    .updated {
+      font-size: 10px;
+      text-align: center;
+      color: gray;
+      margin-top: 3em;
+    }
+    img.banner {
+      display: block;
+      margin: 0 auto 1.5em auto;
+      max-width: 90%;
+      height: auto;
+    }
+  </style>
+</head>
 
-# 云南师范大学数学系列会议 (Mathematics Conference Series hosted by Yunnan Normal University)
+<body>
 
-<p align="center">
-  <img src="./images/ysd.jpg" alt="Conference banner" style="max-width: 90%;">
-</p>
+  <h1>云南师范大学数学系列会议 (Mathematics Conference Series hosted by Yunnan Normal University)</h1>
 
-<p style="text-align: center; font-size: 14px; color: #666; line-height: 1.5;">
-Department of Mathematics, Yunnan Normal University, Kunming, China. <br/>
-Yunnan Key Laboratory of Modern Analytical Mathematics and Applications, Kunming, China.
-</p>
+  <img src="./ysd.jpg" alt="Conference Banner" class="banner">
 
-## Upcoming Conferences
+  <div class="location">
+    Department of Mathematics, Yunnan Normal University, Kunming, China. <br/>
+    Yunnan Key Laboratory of Modern Analytical Mathematics and Applications, Kunming, China.
+  </div>
 
-- [第二届云师数学前沿讲习班（Yunnan Advanced Workshop in Mathematics II）](./yunshi2024.html)
+  <h2>Upcoming Conferences</h2>
+  <ul class="conference-list">
+    <li><a href="./yunshi2024.html">第二届云师数学前沿讲习班（Yunnan Advanced Workshop in Mathematics II）</a></li>
+  </ul>
 
----
+  <hr>
 
-## Previous Conferences
+  <h2>Finished Conferences</h2>
+  <ul class="conference-list">
+    <li><a href="./yunshi2023.html">...</a></li>
+  </ul>
 
+  <p class="updated">
+    Last updated: <!-- This will be static unless you use JavaScript or Jekyll --> April 16, 2025
+  </p>
 
-<p style="font-size: 10px; text-align: center; color: gray;">
-  Last updated: {{ site.time | date: "%B %d, %Y" }}
-</p>
+</body>
+</html>
