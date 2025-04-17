@@ -9,7 +9,10 @@ title: Conferences
 
 ## Upcoming Conferences
 
-- *(Coming soon)*
+- <p style="font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;">
+  第二届云师数学前沿讲习班
+</p>
+
 
 ---
 
