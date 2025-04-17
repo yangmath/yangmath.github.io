@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>YAWM 2024 - YNU Advanced Workshop in Mathematics</title>
+  <style>
+    body {
+      background: white;
+      font-family: serif;
+      font-size: 16px;
+      max-width: 800px;
+      margin: 2em auto;
+      line-height: 1.6;
+    }
+    h1 {
+  text-align: center;
+  font-size: 20pt;
+  margin-bottom: 0.2em;
+}
+
+    h2 {
+      font-size: 18pt;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.2em;
+      margin-top: 2em;
+    }
+    ul {
+      padding-left: 1.5em;
+    }
+    .section {
+      margin-top: 1.5em;
+    }
+    .contact {
+      font-size: 14px;
+      color: #333;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Yunnan Normal University Advanced Workshop in Mathematics 2024</h1>
+  <p style="text-align: center; font-size: 14px; color: #666; margin-top: -0.5em;">
+    July - August, 2024
+  </p>
+
+  <div class="section">
+    <h2>Topics</h2>
+    <ul>
+      <li>Harmonic Analysis</li>
+      <li>Algebraic Geometry</li>
+      <li>...</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Speakers</h2>
+    <ul>
+      <li>Bin Gui</li>
+      <li>Yuhang Liu</li>
+      <li>Mingchen Xia</li>
+      <li>Hongwei Zhang</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Organizers</h2>
+    <ul>
+      <li>Zhipeng Yang</li>
+    </ul>
+  </div>
+
+  <div class="section contact">
+    <h2>Contact</h2>
+    Email: ...</a>
+  </div>
+
+  <div class="back-button">
+    <a href="./">← Back to Main Page</a>
+  </div>
+
+</body>
+</html>
