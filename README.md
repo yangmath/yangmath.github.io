@@ -9,10 +9,7 @@ title: Conferences
 
 ## Upcoming Conferences
 
-- <p style="font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;">
-  第二届云师数学前沿讲习班
-</p>
-
+- [第二届云师数学前沿讲习班（Yunnan Advanced Workshop in Mathematics II）](./yunshi2024.html)
 
 ---
 
