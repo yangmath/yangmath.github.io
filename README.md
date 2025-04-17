@@ -13,7 +13,7 @@ title: Conferences
 
 ---
 
-## Finished Conferences
+## Previous Conferences
 
 - [XXXX](https://example.com)
 
