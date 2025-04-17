@@ -5,7 +5,7 @@ title: Conferences
 
 # Conferences
 
-![Wide conference image](./images/banner.jpg)
+![Wide conference image](.ysd.jpg)
 
 ## Upcoming Conferences
 
