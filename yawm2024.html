@@ -6,11 +6,32 @@
     <style>
         body {
             font-family: Georgia, serif;
-            background-color: #fffff5; /* Graz 网站淡黄背景 */
+            background-color: #fffff5;
             color: #000000;
             line-height: 1.6;
             margin: 0;
             padding: 0;
+        }
+        .navbar {
+            background: #f0f0f0;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar .title {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+        .navbar .menu a {
+            margin-left: 20px;
+            font-size: 14pt;
+            color: #003399;
+            text-decoration: none;
+        }
+        .navbar .menu a:hover {
+            text-decoration: underline;
         }
         .content {
             max-width: 1100px;
@@ -61,13 +82,24 @@
 </head>
 <body>
 
+<!-- Navbar -->
+<div class="navbar">
+    <div class="title">YNNU Mathematics Conference 2024</div>
+    <div class="menu">
+        <a href="./index.html">首页</a>
+        <a href="#about">会议简介</a>
+        <a href="#speakers">报告人</a>
+        <a href="#contact">联系</a>
+    </div>
+</div>
+
 <div class="content">
 
 <h1>云南师范大学数学会议 2024</h1>
 <p><strong>2024年7月25日 – 7月31日</strong></p>
 <p>云南师范大学数学学院, 昆明, 中国</p>
 
-<h2>关于会议</h2>
+<h2 id="about">关于会议</h2>
 <p>
 本次会议旨在促进数学各领域研究者之间的交流与合作，主题涵盖但不限于表示论、微分几何、调和分析、偏微分方程、数论及数学物理等方向。
 </p>
@@ -77,7 +109,7 @@
 会议将包括特邀报告、参会者报告与自由讨论，详细日程将于会前公布。
 </p>
 
-<h2>报告人信息</h2>
+<h2 id="speakers">报告人信息</h2>
 
 <div class="report">
     <h3><a href="#">刘宇航（西交利物浦大学）</a></h3>
@@ -118,7 +150,7 @@
     </div>
 </div>
 
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <p>
 如有问题，请联系 <a href="mailto:yangmathconf@gmail.com">yangmathconf@gmail.com</a>。
 </p>
