@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>2024 非线性分析与偏微分方程研讨会</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #fffff5;
+      color: #000000;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: #f0f0f0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+    .navbar .title {
+      font-size: 16pt;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .navbar .menu a {
+      margin-left: 20px;
+      font-size: 14pt;
+      color: #003399;
+      text-decoration: none;
+    }
+    .navbar .menu a:hover {
+      text-decoration: underline;
+    }
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .back-button {
+      margin-bottom: 20px;
+    }
+    .back-button a {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #003399;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .back-button a:hover {
+      background-color: #e0e0e0;
+    }
+    h1 {
+      font-size: 28pt;
+      font-weight: normal;
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
+    }
+    h2 {
+      font-size: 18pt;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.2em;
+    }
+    p, li {
+      font-size: 14pt;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="title">2024 非线性分析与偏微分方程研讨会</div>
+  <div class="menu">
+    <a href="./index.html">首页</a>
+    <a href="#about">简介</a>
+    <a href="#speakers">报告人</a>
+    <a href="#contact">联系</a>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- 返回按钮 -->
+  <div class="back-button">
+    <a href="./index.html">&larr; 返回主页面</a>
+  </div>
+
+  <h1>2024年非线性分析与偏微分方程学术研讨会</h1>
+  <p><strong>2024年3月29日 – 4月1日</strong></p>
+  <p>云南师范大学数学学院 / 云南省现代分析数学及其应用重点实验室，昆明，中国</p>
+
+  <h2 id="about">会议简介</h2>
+  <p>
+    本次研讨会将围绕非线性分析与偏微分方程等数学研究前沿展开，旨在促进国内相关领域研究者的深入交流，激发学术合作与思想碰撞。
+  </p>
+
+  <h2 id="speakers">报告人名单</h2>
+  <ul>
+    <li>戴蔚（北京航空航天大学）</li>
+    <li>顾光泽（云南师范大学）</li>
+    <li>李海刚（北京师范大学）</li>
+    <li>刘兆理（首都师范大学）</li>
+    <li>罗鹏（华中师范大学）</li>
+    <li>麻希南（中国科学技术大学）</li>
+    <li>马如云（西安电子科技大学）</li>
+    <li>唐仲伟（北京师范大学）</li>
+    <li>温焕尧（华南理工大学）</li>
+    <li>吴亦凡（天津大学）</li>
+    <li>熊金钢（北京师范大学）</li>
+    <li>严树森（华中师范大学）</li>
+    <li>尹景学（华南师范大学）</li>
+    <li>张志涛（中国科学院数学与系统科学研究院）</li>
+  </ul>
+
+  <h2 id="contact">联系方式</h2>
+  <p>如有问题，请联系会议组织者。</p>
+
+  <p style="font-size: 12px; color: #555; margin-top: 40px;">
+    Last updated: June 2025
+  </p>
+
+</div>
+
+</body>
+</html>
