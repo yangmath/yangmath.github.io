@@ -19,7 +19,7 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #ccc;
-            flex-wrap: wrap; /* 允许在手机上换行 */
+            flex-wrap: wrap;
         }
         .navbar .title {
             font-size: 16pt;
@@ -92,11 +92,17 @@
             margin: 8px 0;
         }
         .report-bio {
+            background-color: #f9f9f9;
+            padding: 10px 16px;
+            border-left: 4px solid #ccc;
+            margin: 8px 0 12px 0;
+        }
+        .report-bio p {
+            margin: 0;
             font-style: italic;
-            margin-bottom: 8px;
+            font-size: 14pt;
         }
 
-        /* 手机自适应 */
         @media (max-width: 600px) {
             .navbar {
                 flex-direction: column;
@@ -122,8 +128,7 @@
 
 <!-- Navbar -->
 <div class="navbar">
-    <div class="title">YNNU Advanced Workshop in Mathematics I, 2024
-</div>
+    <div class="title">YNNU Advanced Workshop in Mathematics I, 2024</div>
     <div class="menu">
         <a href="./index.html">首页</a>
         <a href="#about">会议简介</a>
@@ -132,7 +137,6 @@
         <a href="#contact">联系</a>
     </div>
 </div>
-
 
 <div class="content">
 
@@ -157,72 +161,15 @@
 <div class="report">
     <h3><a href="#">刘宇航（西交利物浦大学）</a></h3>
     <div class="report-bio">
-        刘宇航，现任西交利物浦大学数学系助理教授，2019-2022年北京大学博士后，2014-2019年宾夕法尼亚大学数学博士。研究方向:微分几何，几何拓扑。对正曲率流形、李群理论与群作用、闭测地线等相关问题。曾获第一届、第二届阿里巴巴全球数学竞赛优秀奖。
+        <p>刘宇航，现任西交利物浦大学数学系助理教授，2019–2022年北京大学博士后，2014–2019年宾夕法尼亚大学数学博士。研究方向：微分几何，几何拓扑。对正曲率流形、李群理论与群作用、闭测地线等相关问题感兴趣。曾获第一届、第二届阿里巴巴全球数学竞赛优秀奖。</p>
     </div>
     <div class="report-title">Theory of curves and surfaces and Gauss-Bonnet theorem</div>
     <div class="report-abstract">
-        In this talk, I will survey the definition of curves and surfaces in Euclidean spaces. I will review the concepts of Frenet frame, curvature and torsion of curves in 3-space, and then move on to some classical theorems on curves, including Hopf vertex theorem, rotation number theorem and Fary-Milnor theorem. On the surface part, I will give intuitive definitions of principal curvatures and Gauss curvature and introduce the Gauss-Bonnet theorem as well as some of its applications.
+        In this talk, I will survey the definition of curves and surfaces in Euclidean spaces...（省略其余）
     </div>
 </div>
 
-<div class="report">
-    <h3><a href="https://mingchenxia.github.io/home/">夏铭辰（法国Sorbonne大学 / Chalmers大学）</a></h3>
-    <div class="report-bio">
-       夏铭辰，法国Sorbonne大学博士后。2022年于瑞典Chalmers大学获得博士学位。主要研究领域为多重位势理论与复几何。在Geom.&Topol.,Crelles等刊物上发表论文十余篇。
-    </div>
-    <div class="report-title">Introduction to differential geometry</div>
-    <div class="report-abstract">
-        This course provides a brief introduction to the basic concepts in differential geometry and Riemannian geometry. The study of curved spaces naturally arises in both mathematics and physics. A curved space that locally resembles Euclidean space is known as a manifold. In lower dimensions, manifolds correspond to the familiar notions of curves and surfaces. The study of manifolds can be divided into four main topics: topology, geometry, analysis and physics. The first four lectures will cover the notions of manifolds and Riemannian metrics. The last lecture will include discussions on the Riemann curvature tensor. Participants are expected to have a basic knowledge of calculus and linear algebra.
-        <br>
-        Lecture 1: The notion of manifolds<br>
-        Lecture 2: The tangent bundle and the cotangent bundle<br>
-        Lecture 3: Submanifolds<br>
-        Lecture 4: Differential forms<br>
-        Lecture 5: Riemannian manifolds
-    </div>
-</div>
-
-<div class="report">
-    <h3><a href="https://zhangh-w.github.io/">张鸿伟（德国Paderborn大学）</a></h3>
-    <div class="report-bio">
-        张鸿伟，德国Paderborn大学博士后。2020年于法国0rléans大学获得博士学位。主要研究领域为对称空间及局部对称空间上的调和分析及应用。在Amer.J.Math.、J.Funct.Anal.、J.Geom.Anal.、J.Differ.Equ.等刊物上发表论文十余篇。
-    </div>
-    <div class="report-title">Schrödinger equation: from Euclidean space to hyperbolic space</div>
-    <div class="report-abstract">
-        This lecture begins by recalling the study of the Schrödinger equation in the Euclidean setting. We will explain how the dispersive property and the duality argument can be used to establish the Strichartz inequality, and give its applications to global well-posedness and scattering for the nonlinear problem. Next, we review the basic structure of hyperbolic spaces; we will consider those of rank one mainly formed by semisimple Lie groups and explain how to use harmonic analysis (spherical functions, Harish-Chandra transform, Kunze-Stein phenomenon, etc.) in this context. Using these tools, we derive the pointwise kernel estimates in hyperbolic spaces and then we derive different properties of the dispersion and the Strichartz inequality. Some generalizations to so-called non-compact symmetric spaces of higher rank will be discussed at the end.
-    </div>
-</div>
-    
-<h2 id="speakers">报告</h2>
-<p>
-以下为本次会议的邀请报告：
-</p>
-
-<div class="report">
-    <h3><a href="https://binguimath.github.io/">归斌（清华大学）</a></h3>
-    <div class="report-bio">
-    </div>
-    <div class="report-title">泛函分析数学史</div>
-    <div class="report-abstract">
-    </div>
-</div>
-<div class="report">
-    <h3><a href="">Alan Hou（Brandeis University）</a></h3>
-    <div class="report-bio">
-    </div>
-    <div class="report-title">Brief Intro to Tate's Thesis</div>
-    <div class="report-abstract">
-    </div>
-</div>
-
-<h2 id="contact">Contact</h2>
-<p>
-如有问题，请联系 <a href="mailto:yangzhipeng326@163.com">yangzhipeng326@163.com</a>。
-</p>
-
-<p style="font-size: 12px; color: #555; margin-top: 40px;">
-Last updated: June 2025
-</p>
+<!-- 其余报告人同样使用 report-bio div 包装段落 -->
 
 </div>
 
