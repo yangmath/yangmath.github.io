@@ -84,9 +84,11 @@
         .report {
             margin-bottom: 30px;
         }
-        .report h3 {
-            margin-bottom: 0.2em;
-        }.report h3 a {
+        .report h3::before {
+  content: "➤ ";
+  color: #003399;
+  margin-right: 4px;
+}.report h3 a {
   font-size: 16pt;
   font-weight: bold;
 }
