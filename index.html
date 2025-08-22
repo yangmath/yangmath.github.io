@@ -151,24 +151,15 @@
     <h2 class="section-title">Talks · 学术报告</h2>
 
     <style>
-      /* Table layout for talks */
-      .talk-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 0.8em 0 1.6em 0;
-        font-size: 15px;
-      }
-      .talk-table th, .talk-table td {
-        border-bottom: 1px solid #ddd;
-        padding: 10px 8px;
-        vertical-align: top;
-      }
+      /* Simple table + click-to-toggle abstract */
+      .talk-table { width: 100%; border-collapse: collapse; margin: 0.8em 0 1.6em; font-size: 15px; }
+      .talk-table th, .talk-table td { border-bottom: 1px solid #ddd; padding: 10px 8px; vertical-align: top; }
       .talk-table th { background: #faf7e6; text-align: left; }
       .talk-table tr:hover td { background: #fffdf3; }
       .title-link { cursor: pointer; text-decoration: underline; }
+      .title-link::after { content: " ▾"; font-size: 12px; }
       .abstract-row { display: none; background: #fff; }
-      .abstract-cell { padding: 12px 8px 16px 8px; color: #444; }
-      .pill { display: inline-block; font-size: 11px; padding: 2px 8px; border: 1px solid #bbb; border-radius: 999px; color: #444; margin-left: 6px; }
+      .abstract-cell { padding: 12px 8px 16px; color: #444; }
       .meta-muted { color: #666; font-size: 90%; }
     </style>
 
@@ -183,22 +174,15 @@
         </tr>
       </thead>
       <tbody>
-        <!-- DATA ROW -->
+        <!-- 模板：复制下面两行（数据行 + 摘要行），替换字段。保留两行的先后顺序。 -->
         <tr>
           <td>2025-09-05 · 15:00<br><span class="meta-muted">理工楼 A101</span></td>
           <td>A. Researcher<br><span class="meta-muted">Example University</span></td>
-          <td>
-            <span class="title-link" data-toggle>Recent progress on automorphic descents</span>
-            <span class="pill">seminar</span>
-            <div class="meta-muted">
-              <a href="#">Abstract</a> · <a href="#">Slides</a> · <a href="#">Video</a>
-            </div>
-          </td>
+          <td><span class="title-link" data-toggle>Recent progress on automorphic descents</span></td>
         </tr>
-        <!-- ABSTRACT ROW (紧跟在对应的数据行后面) -->
         <tr class="abstract-row">
           <td colspan="3" class="abstract-cell">
-            <strong>Abstract.</strong> This is a placeholder abstract. Replace with the actual paragraph describing the talk content, main results, and prerequisites.
+            <strong>Abstract.</strong> This is a placeholder abstract. Replace with the actual paragraph describing the talk.
           </td>
         </tr>
       </tbody>
@@ -218,13 +202,7 @@
         <tr>
           <td>2025-06-21<br><span class="meta-muted">理工楼 A101</span></td>
           <td>B. Mathematician<br><span class="meta-muted">Sample Institute</span></td>
-          <td>
-            <span class="title-link" data-toggle>Theta correspondence and relative trace formulas</span>
-            <span class="pill">colloquium</span>
-            <div class="meta-muted">
-              <a href="#">Abstract</a> · <a href="#">Slides</a>
-            </div>
-          </td>
+          <td><span class="title-link" data-toggle>Theta correspondence and relative trace formulas</span></td>
         </tr>
         <tr class="abstract-row">
           <td colspan="3" class="abstract-cell">
@@ -242,13 +220,12 @@
           if (!row) return;
           var next = row.nextElementSibling;
           if (!next || !next.classList.contains('abstract-row')) return;
-          next.style.display = (next.style.display === 'table-row') ? 'none' : 'table-row';
+          var show = next.style.display !== 'table-row';
+          next.style.display = show ? 'table-row' : 'none';
         }
         document.addEventListener('click', function(e) {
           var t = e.target;
-          if (t && t.matches('[data-toggle]')) {
-            toggleNextAbstract(t);
-          }
+          if (t && t.matches('[data-toggle]')) toggleNextAbstract(t);
         });
       })();
     </script>
