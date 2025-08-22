@@ -2,14 +2,13 @@
 <html>
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6GVECKHXZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L6GVECKHXZ');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6GVECKHXZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-L6GVECKHXZ');
+  </script>
   <meta charset="UTF-8">
   <title>Mathematics Conferences - Yunnan Normal University</title>
   <style>
@@ -46,9 +45,20 @@
       line-height: 1.6;
       margin-bottom: 2em;
     }
-    .conference-list {
+    .section-title {
+      font-size: 20pt;
+      margin: 1.2em 0 0.3em 0;
+    }
+    .subsection-title {
+      font-size: 16pt;
+      margin: 0.8em 0 0.3em 0;
+      color: #333;
+    }
+    .conference-list,
+    .talk-list {
       margin-left: 1em;
       font-size: 14pt;
+      padding-left: 1.2em;
     }
     .updated {
       font-size: 10px;
@@ -67,6 +77,31 @@
       border: none;
       border-top: 1px solid #ccc;
       margin: 2em 0;
+    }
+    /* --- Talks block styles --- */
+    .talk-item {
+      margin: 0.6em 0 0.9em 0;
+      line-height: 1.4;
+    }
+    .talk-title {
+      font-weight: 600;
+    }
+    .talk-meta {
+      font-size: 90%;
+      color: #555;
+    }
+    .talk-links a {
+      font-size: 90%;
+      margin-right: 0.8em;
+    }
+    .pill {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border: 1px solid #bbb;
+      border-radius: 999px;
+      color: #444;
+      margin-left: 6px;
     }
   </style>
 </head>
@@ -87,34 +122,139 @@
       <a href="https://math.ynnu.edu.cn/fxsxsys/"> Yunnan Key Laboratory of Modern Analytical Mathematics and Applications, Kunming, China.</a>
     </div>
 
-<h2>Upcoming Conferences</h2>
+    <!-- ========================= Conferences ========================= -->
+    <h2 class="section-title">Upcoming Conferences</h2>
 
+    <hr>
 
-<hr>
+    <h2 class="section-title">Finished Conferences</h2>
+    <ul class="conference-list">
+      <li>
+        <a href="./yawm2025.html">第二届云师数学前沿讲习班</a><br>
+        <span style="font-size: 90%; color: #555;">YNNU Advanced Workshop in Mathematics II, 2025</span>
+      </li>
+      <li>
+        <a href="./yawm2024.html">第一届云师数学前沿讲习班</a><br>
+        <span style="font-size: 90%; color: #555;">YNNU Advanced Workshop in Mathematics I, 2024</span>
+      </li>
+      <li>
+        <a href="./2024fxxxsyth.html">2024年非线性分析与偏微分方程学术研讨会</a><br>
+        <span style="font-size: 90%; color: #555;">2024 Workshop on Nonlinear Analysis and Partial Differential Equations</span>
+      </li>
+      <li>
+        <a href="./2024fxxqnxz.html">2024年非线性分析青年学者论坛</a><br>
+        <span style="font-size: 90%; color: #555;">2024 Young Scholars Forum on Nonlinear Analysis</span>
+      </li>
+    </ul>
+    <!-- ========================= Talks / Colloquia ========================= -->
+    <hr>
+    <h2 class="section-title">Talks · 学术报告</h2>
 
-<h2>Finished Conferences</h2>
-    
-<ul class="conference-list">
-  <li>
-    <a href="./yawm2025.html">第二届云师数学前沿讲习班</a><br>
-    <span style="font-size: 90%; color: #555;">YNNU Advanced Workshop in Mathematics II, 2025</span>
-  </li>
-  <li>
-    <a href="./yawm2024.html">第一届云师数学前沿讲习班</a><br>
-    <span style="font-size: 90%; color: #555;">YNNU Advanced Workshop in Mathematics I, 2024</span>
-  </li>
-  <li>
-    <a href="./2024fxxxsyth.html">2024年非线性分析与偏微分方程学术研讨会</a><br>
-    <span style="font-size: 90%; color: #555;">2024 Workshop on Nonlinear Analysis and Partial Differential Equations</span>
-  </li>
-  <li>
-    <a href="./2024fxxqnxz.html">2024年非线性分析青年学者论坛</a><br>
-    <span style="font-size: 90%; color: #555;">2024 Young Scholars Forum on Nonlinear Analysis</span>
-  </li>
-</ul>
+    <style>
+      /* Table layout for talks */
+      .talk-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.8em 0 1.6em 0;
+        font-size: 15px;
+      }
+      .talk-table th, .talk-table td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 8px;
+        vertical-align: top;
+      }
+      .talk-table th { background: #faf7e6; text-align: left; }
+      .talk-table tr:hover td { background: #fffdf3; }
+      .title-link { cursor: pointer; text-decoration: underline; }
+      .abstract-row { display: none; background: #fff; }
+      .abstract-cell { padding: 12px 8px 16px 8px; color: #444; }
+      .pill { display: inline-block; font-size: 11px; padding: 2px 8px; border: 1px solid #bbb; border-radius: 999px; color: #444; margin-left: 6px; }
+      .meta-muted { color: #666; font-size: 90%; }
+    </style>
+
+    <!-- Upcoming Talks Table -->
+    <h3 class="subsection-title">Upcoming Talks</h3>
+    <table class="talk-table" id="upcoming-talks">
+      <thead>
+        <tr>
+          <th style="width: 18%">Date / Time</th>
+          <th style="width: 28%">Speaker</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- DATA ROW -->
+        <tr>
+          <td>2025-09-05 · 15:00<br><span class="meta-muted">理工楼 A101</span></td>
+          <td>A. Researcher<br><span class="meta-muted">Example University</span></td>
+          <td>
+            <span class="title-link" data-toggle>Recent progress on automorphic descents</span>
+            <span class="pill">seminar</span>
+            <div class="meta-muted">
+              <a href="#">Abstract</a> · <a href="#">Slides</a> · <a href="#">Video</a>
+            </div>
+          </td>
+        </tr>
+        <!-- ABSTRACT ROW (紧跟在对应的数据行后面) -->
+        <tr class="abstract-row">
+          <td colspan="3" class="abstract-cell">
+            <strong>Abstract.</strong> This is a placeholder abstract. Replace with the actual paragraph describing the talk content, main results, and prerequisites.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Past Talks Table -->
+    <h3 class="subsection-title">Past Talks</h3>
+    <table class="talk-table" id="past-talks">
+      <thead>
+        <tr>
+          <th style="width: 18%">Date / Time</th>
+          <th style="width: 28%">Speaker</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-06-21<br><span class="meta-muted">理工楼 A101</span></td>
+          <td>B. Mathematician<br><span class="meta-muted">Sample Institute</span></td>
+          <td>
+            <span class="title-link" data-toggle>Theta correspondence and relative trace formulas</span>
+            <span class="pill">colloquium</span>
+            <div class="meta-muted">
+              <a href="#">Abstract</a> · <a href="#">Slides</a>
+            </div>
+          </td>
+        </tr>
+        <tr class="abstract-row">
+          <td colspan="3" class="abstract-cell">
+            <strong>Abstract.</strong> Placeholder abstract for a past talk. Replace with the actual abstract if available.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // 简单下拉：点击标题，切换下一行（abstract-row）的显示
+      (function() {
+        function toggleNextAbstract(el) {
+          var row = el.closest('tr');
+          if (!row) return;
+          var next = row.nextElementSibling;
+          if (!next || !next.classList.contains('abstract-row')) return;
+          next.style.display = (next.style.display === 'table-row') ? 'none' : 'table-row';
+        }
+        document.addEventListener('click', function(e) {
+          var t = e.target;
+          if (t && t.matches('[data-toggle]')) {
+            toggleNextAbstract(t);
+          }
+        });
+      })();
+    </script>
 
     <p class="updated">
-      Last updated: August 15th, 2025
+      Last updated: August 22nd, 2025
     </p>
 
   </div>
