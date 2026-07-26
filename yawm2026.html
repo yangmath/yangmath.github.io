@@ -621,25 +621,36 @@
       line-height: 1.85;
     }
 
-    .schedule-panel {
+    .schedule-shell {
       display: grid;
-      grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
-      background: var(--ink);
+      gap: 25px;
+    }
+
+    .schedule-intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      padding: clamp(27px, 4vw, 42px);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        var(--ink);
+      background-size: 30px 30px;
       color: #f9f5eb;
+      border-radius: 3px;
       box-shadow: var(--shadow);
     }
 
-    .schedule-date {
-      padding: clamp(34px, 6vw, 70px);
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-      background-size: 30px 30px;
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    .schedule-intro-copy {
+      max-width: 690px;
     }
 
-    .schedule-date span {
-      display: block;
+    .schedule-label {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 12px;
       color: var(--gold-light);
       font-family: var(--sans);
       font-size: 11px;
@@ -648,34 +659,186 @@
       text-transform: uppercase;
     }
 
-    .schedule-date strong {
-      display: block;
-      margin-top: 21px;
-      font-family: var(--serif-en);
-      font-size: clamp(32px, 5vw, 59px);
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
+    .schedule-label::before {
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      content: "";
     }
 
-    .schedule-state {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(34px, 6vw, 70px);
-    }
-
-    .schedule-state h3 {
-      margin: 0 0 16px;
-      font-size: clamp(26px, 3vw, 38px);
-      font-weight: 500;
-    }
-
-    .schedule-state p {
-      max-width: 520px;
+    .schedule-intro h3 {
       margin: 0;
-      color: rgba(249, 245, 235, 0.7);
-      font-size: 15px;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .schedule-intro p {
+      margin: 10px 0 0;
+      color: rgba(249, 245, 235, 0.72);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .schedule-range {
+      display: block;
+      margin-bottom: 2px;
+      color: #f9f5eb;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .schedule-key {
+      display: flex;
+      flex: 0 0 auto;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 9px;
+      max-width: 390px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(249, 245, 235, 0.86);
+      font-family: var(--sans);
+      font-size: 12px;
+    }
+
+    .schedule-key li {
+      padding: 6px 11px;
+      border: 1px solid rgba(249, 245, 235, 0.18);
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .schedule-table-wrap {
+      overflow-x: auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      box-shadow: var(--shadow);
+      scrollbar-color: var(--gold-light) var(--paper-deep);
+    }
+
+    .schedule-table {
+      width: 100%;
+      min-width: 1080px;
+      border-collapse: collapse;
+      table-layout: fixed;
+      line-height: 1.45;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .schedule-table tr > :last-child {
+      border-right: 0;
+    }
+
+    .schedule-table tbody tr:last-child > * {
+      border-bottom: 0;
+    }
+
+    .schedule-table thead th {
+      padding: 15px 12px;
+      background: var(--paper-deep);
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.035em;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .schedule-table thead th:first-child {
+      width: 118px;
+    }
+
+    .schedule-table tbody th {
+      padding: 20px 16px;
+      background: rgba(238, 229, 213, 0.5);
+      color: var(--ink);
+      font-weight: 600;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .schedule-table tbody th time {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .schedule-weekday {
+      display: block;
+      margin-top: 6px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .schedule-table tbody td {
+      height: 104px;
+      padding: 19px 14px;
+      color: var(--ink);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .schedule-type {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .schedule-speaker {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .schedule-room {
+      display: inline-block;
+      margin-top: 8px;
+      padding-top: 5px;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--gold-light);
+      font-family: var(--sans);
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .schedule-empty {
+      color: var(--line) !important;
+      font-family: var(--serif-en);
+      font-size: 20px;
+      text-align: center !important;
+    }
+
+    .schedule-mobile {
+      display: none;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 13px;
+    }
+
+    .schedule-note {
+      margin: -2px 0 0;
+      padding-left: 14px;
+      color: var(--ink-soft);
+      border-left: 2px solid var(--gold-light);
+      font-size: 13px;
+      line-height: 1.75;
     }
 
     .information-grid {
@@ -878,6 +1041,119 @@
         grid-column: 2;
         justify-self: start;
       }
+
+      .schedule-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .schedule-key {
+        justify-content: flex-start;
+      }
+
+      .schedule-mobile {
+        display: block;
+      }
+
+      .schedule-table-wrap {
+        overflow: visible;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .schedule-table {
+        display: block;
+        min-width: 0;
+      }
+
+      .schedule-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .schedule-table tbody {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .schedule-table tbody tr {
+        display: block;
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        box-shadow: 0 12px 34px rgba(54, 45, 31, 0.07);
+      }
+
+      .schedule-table tbody th {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 16px 18px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .schedule-table tbody th time,
+      .schedule-weekday {
+        display: inline;
+        margin-top: 0;
+      }
+
+      .schedule-table tbody td {
+        display: grid;
+        grid-template-columns: 108px minmax(0, 1fr);
+        gap: 14px;
+        height: auto;
+        min-height: 0;
+        padding: 13px 18px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .schedule-table tbody td::before {
+        color: var(--ink-soft);
+        content: attr(data-time);
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.6;
+        white-space: nowrap;
+      }
+
+      .schedule-table tbody td > .schedule-type,
+      .schedule-table tbody td > .schedule-speaker,
+      .schedule-table tbody td > .schedule-room {
+        grid-column: 2;
+        justify-self: start;
+      }
+
+      .schedule-table tbody tr:last-child > * {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .schedule-table tbody tr > :last-child {
+        border-bottom: 0;
+      }
+
+      .schedule-table tbody td.schedule-empty {
+        display: none;
+      }
+
+      .schedule-room {
+        margin-top: 6px;
+      }
     }
 
     @media (max-width: 680px) {
@@ -1005,13 +1281,21 @@
         margin-bottom: 46px;
       }
 
-      .schedule-panel {
+      .schedule-intro {
+        padding: 24px 21px;
+      }
+
+      .schedule-key {
+        display: grid;
+        justify-items: start;
+      }
+
+      .schedule-table tbody {
         grid-template-columns: 1fr;
       }
 
-      .schedule-date {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      .schedule-table tbody td {
+        grid-template-columns: 102px minmax(0, 1fr);
       }
 
       .information-grid {
@@ -1086,8 +1370,61 @@
       }
 
       .announcement-card,
-      .schedule-panel {
+      .schedule-intro,
+      .schedule-table-wrap {
         box-shadow: none;
+      }
+
+      .schedule-mobile {
+        display: none !important;
+      }
+
+      .schedule-table-wrap {
+        display: block !important;
+        overflow: visible;
+        border: 1px solid var(--line);
+      }
+
+      .schedule-table {
+        display: table;
+        min-width: 0;
+        font-size: 9px;
+      }
+
+      .schedule-table thead {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+      }
+
+      .schedule-table tbody {
+        display: table-row-group;
+      }
+
+      .schedule-table tbody tr {
+        display: table-row;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .schedule-table tbody th,
+      .schedule-table tbody td {
+        display: table-cell;
+        height: auto;
+        padding: 8px 6px;
+      }
+
+      .schedule-table tbody td::before {
+        display: none;
+      }
+
+      .schedule-table tbody td.schedule-empty {
+        display: table-cell;
       }
     }
   </style>
@@ -1252,18 +1589,273 @@
           </div>
         </div>
 
-        <div class="schedule-panel reveal">
-          <div class="schedule-date">
-            <span>Workshop Dates</span>
-            <strong>26 Jul<br>— 05 Aug</strong>
+        <div class="schedule-shell">
+          <div class="schedule-intro reveal">
+            <div class="schedule-intro-copy">
+              <span class="schedule-label">Preliminary Programme</span>
+              <h3>初步日程</h3>
+              <p>
+                <span class="schedule-range">2026 年 7 月 27 日 — 8 月 4 日</span>
+                课程、报告与开幕式的时间和教室已按当前安排列出。
+              </p>
+            </div>
+            <ul class="schedule-key">
+              <li>午休 12:15–14:30</li>
+              <li>地点 308 / 406</li>
+            </ul>
           </div>
-          <div class="schedule-state">
-            <span class="status">2026 Programme</span>
-            <h3>详细日程即将公布</h3>
-            <p>
-              每日课程、学术报告和交流时段将在讲者及场地安排确认后集中发布。
-            </p>
-          </div>
+
+          <p class="schedule-mobile">以下日程已按日期分组，空白时段不显示。</p>
+
+          <section
+            class="schedule-table-wrap reveal"
+            aria-label="初步日程表，可横向滚动"
+            tabindex="0"
+          >
+            <table class="schedule-table">
+              <caption class="visually-hidden">
+                第三届云师数学前沿讲习班初步日程，2026 年 7 月 27 日至 8 月 4 日
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">日期</th>
+                  <th scope="col">08:30–09:00</th>
+                  <th scope="col">09:00–10:30</th>
+                  <th scope="col">10:45–12:15</th>
+                  <th scope="col">14:30–15:30</th>
+                  <th scope="col">15:30–16:30</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-07-27">7 月 27 日</time>
+                    <span class="schedule-weekday">星期一</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td class="schedule-empty" data-time="09:00–10:30">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td class="schedule-empty" data-time="10:45–12:15">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">张秉宇</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">张秉宇</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-07-28">7 月 28 日</time>
+                    <span class="schedule-weekday">星期二</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td class="schedule-empty" data-time="09:00–10:30">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td class="schedule-empty" data-time="10:45–12:15">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">张秉宇</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">张秉宇</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-07-29">7 月 29 日</time>
+                    <span class="schedule-weekday">星期三</span>
+                  </th>
+                  <td data-time="08:30–09:00">
+                    <span class="schedule-type">开幕式</span>
+                    <span class="schedule-speaker">刘祥清</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">麻希南</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker" lang="en">Monica Musso</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">吴元泽</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">杨志鹏</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-07-30">7 月 30 日</time>
+                    <span class="schedule-weekday">星期四</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">麻希南</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker">王云祥</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">张鸿伟</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">张鸿伟</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-07-31">7 月 31 日</time>
+                    <span class="schedule-weekday">星期五</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">麻希南</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker">AI 课程</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">张鸿伟</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">张鸿伟</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-08-01">8 月 1 日</time>
+                    <span class="schedule-weekday">星期六</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">麻希南</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker">张秉宇</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">张鸿伟</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">张鸿伟</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-08-02">8 月 2 日</time>
+                    <span class="schedule-weekday">星期日</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">麻希南</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">308 教室</span>
+                  </td>
+                  <td class="schedule-empty" data-time="15:30–16:30">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-08-03">8 月 3 日</time>
+                    <span class="schedule-weekday">星期一</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker">孟龙</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <time datetime="2026-08-04">8 月 4 日</time>
+                    <span class="schedule-weekday">星期二</span>
+                  </th>
+                  <td class="schedule-empty" data-time="08:30–09:00">
+                    <span class="visually-hidden">无安排</span><span aria-hidden="true">—</span>
+                  </td>
+                  <td data-time="09:00–10:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="10:45–12:15">
+                    <span class="schedule-speaker">曲华迪</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="14:30–15:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                  <td data-time="15:30–16:30">
+                    <span class="schedule-speaker">严泽田</span>
+                    <span class="schedule-room">406 教室</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <p class="schedule-note">
+            注：以上为初步日程，安排如有调整，以后续通知为准。
+          </p>
         </div>
       </div>
     </section>
