@@ -621,6 +621,158 @@
       line-height: 1.85;
     }
 
+    .course-card {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      overflow: hidden;
+      background: rgba(255, 253, 248, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      box-shadow: var(--shadow);
+    }
+
+    .course-overview,
+    .course-reading {
+      padding: clamp(30px, 4.5vw, 54px);
+    }
+
+    .course-card .card-type {
+      margin-bottom: 39px;
+    }
+
+    .course-card h3 {
+      margin: 0 0 17px;
+      color: var(--ink);
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .course-instructor-row {
+      display: flex;
+      align-items: baseline;
+      gap: 13px;
+      margin-bottom: 25px;
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: 12px;
+    }
+
+    .course-instructor-row > span {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .course-instructor {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--ink);
+      font-family: var(--serif-cn);
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration-color: var(--gold-light);
+      transition: color 180ms ease;
+    }
+
+    .course-instructor:hover {
+      color: var(--gold);
+    }
+
+    .course-instructor-arrow {
+      font-family: var(--sans);
+      font-size: 0.65em;
+      font-weight: 500;
+    }
+
+    .course-description {
+      max-width: 520px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .course-schedule-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 29px;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration-color: var(--gold-light);
+    }
+
+    .course-reading {
+      background:
+        linear-gradient(rgba(148, 107, 61, 0.035) 1px, transparent 1px),
+        var(--paper-deep);
+      background-size: 100% 31px;
+      border-left: 1px solid var(--line);
+    }
+
+    .course-reading-label {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--gold);
+      font-family: var(--serif-en);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .course-reading h4 {
+      margin: 0 0 23px;
+      color: var(--ink);
+      font-size: clamp(23px, 2.7vw, 31px);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .reference-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: reference;
+    }
+
+    .reference-list li {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 13px;
+      padding: 17px 0;
+      color: var(--ink-soft);
+      counter-increment: reference;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .reference-list li::before {
+      color: var(--gold);
+      content: counter(reference, decimal-leading-zero);
+      font-family: var(--serif-en);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .reference-list li + li {
+      border-top: 1px solid rgba(148, 107, 61, 0.18);
+    }
+
+    .reference-list cite {
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    .reference-list cite[lang="zh-CN"] {
+      font-style: normal;
+    }
+
     .schedule-shell {
       display: grid;
       gap: 25px;
@@ -1042,6 +1194,15 @@
         justify-self: start;
       }
 
+      .course-card {
+        grid-template-columns: 1fr;
+      }
+
+      .course-reading {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
       .schedule-intro {
         align-items: flex-start;
         flex-direction: column;
@@ -1281,6 +1442,24 @@
         margin-bottom: 46px;
       }
 
+      .course-overview,
+      .course-reading {
+        padding: 29px 22px;
+      }
+
+      .course-card .card-type {
+        margin-bottom: 34px;
+      }
+
+      .course-instructor-row {
+        flex-wrap: wrap;
+      }
+
+      .reference-list li {
+        grid-template-columns: 27px minmax(0, 1fr);
+        gap: 10px;
+      }
+
       .schedule-intro {
         padding: 24px 21px;
       }
@@ -1370,6 +1549,7 @@
       }
 
       .announcement-card,
+      .course-card,
       .schedule-intro,
       .schedule-table-wrap {
         box-shadow: none;
@@ -1528,28 +1708,58 @@
         </div>
 
         <div class="programme-grid">
-          <article class="announcement-card reveal">
-            <div class="card-type">
-              <span>Course Programme</span>
-              <span class="card-index">C</span>
+          <article class="course-card reveal">
+            <div class="course-overview">
+              <div class="card-type">
+                <span>Mini-course 01</span>
+                <span class="card-index">01</span>
+              </div>
+              <span class="status">课程已公布</span>
+              <h3>流形上的微积分</h3>
+              <div class="course-instructor-row">
+                <span>授课教师</span>
+                <a
+                  class="course-instructor"
+                  href="https://byzhang.cn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  张秉宇
+                  <span class="course-instructor-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <p class="course-description">
+                本课程介绍如何将欧式空间上的微积分推广到一种常见的弯曲空间——微分流形上。
+              </p>
+              <a class="course-schedule-link" href="#schedule">
+                查看课程日程 <span aria-hidden="true">→</span>
+              </a>
             </div>
-            <span class="status">Coming soon</span>
-            <h3>课程信息即将公布</h3>
-            <p>
-              课程名称、授课人、课程简介与参考资料将在确认后陆续发布。
-            </p>
-          </article>
 
-          <article class="announcement-card reveal">
-            <div class="card-type">
-              <span>Learning &amp; Exchange</span>
-              <span class="card-index">∞</span>
+            <div class="course-reading">
+              <span class="course-reading-label">Recommended Reading</span>
+              <h4>参考书目</h4>
+              <ol class="reference-list">
+                <li>
+                  <span lang="en">
+                    M. Spivak,
+                    <cite>Calculus on Manifolds: A Modern Approach to Classical Theorems of Advanced Calculus</cite>.
+                    W. A. Benjamin, 1965.
+                  </span>
+                </li>
+                <li>
+                  <span lang="en">
+                    M. P. do Carmo, <cite>Riemannian Geometry</cite>.
+                    Birkhäuser, 1992.
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    陈维桓，<cite lang="zh-CN">《微分流形初步》</cite>，北京大学出版社。
+                  </span>
+                </li>
+              </ol>
             </div>
-            <span class="status">For students and researchers</span>
-            <h3>系统学习与前沿交流</h3>
-            <p>
-              课程将兼顾基础背景、核心方法与研究前沿，为来自不同方向的参与者提供共同的讨论起点。
-            </p>
           </article>
         </div>
       </div>
