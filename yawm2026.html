@@ -621,6 +621,160 @@
       line-height: 1.85;
     }
 
+    .talks-list {
+      display: grid;
+      gap: 30px;
+    }
+
+    .talk-card {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+      overflow: hidden;
+      background: rgba(255, 253, 248, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      box-shadow: var(--shadow);
+    }
+
+    .talk-heading,
+    .talk-abstract {
+      min-width: 0;
+      padding: clamp(30px, 4.5vw, 54px);
+    }
+
+    .talk-heading {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(148, 107, 61, 0.035) 1px, transparent 1px),
+        var(--paper-deep);
+      background-size: 100% 31px;
+      border-right: 1px solid var(--line);
+    }
+
+    .talk-heading::after {
+      position: absolute;
+      right: -72px;
+      bottom: -92px;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(148, 107, 61, 0.15);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .talk-card .card-type {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 40px;
+    }
+
+    .talk-speaker {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 13px;
+      margin: 0 0 22px;
+    }
+
+    .talk-speaker span {
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .talk-speaker strong {
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .talk-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--serif-en);
+      font-size: clamp(25px, 3.1vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.018em;
+      line-height: 1.38;
+    }
+
+    .talk-abstract-label {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 19px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .talk-abstract-label::before {
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .talk-abstract p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-family: var(--serif-en);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .talk-abstract p + p {
+      margin-top: 17px;
+    }
+
+    .math-inline,
+    .talk-equation {
+      font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+    }
+
+    .math-inline {
+      white-space: nowrap;
+    }
+
+    .talk-equation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 22px;
+      margin: 19px 0;
+      padding: 15px 18px;
+      overflow-x: auto;
+      color: var(--ink);
+      background: rgba(246, 241, 231, 0.62);
+      border-left: 2px solid var(--gold-light);
+      font-size: clamp(15px, 1.55vw, 18px);
+      line-height: 1.7;
+      scrollbar-color: var(--gold-light) var(--paper-deep);
+    }
+
+    .math-expression {
+      white-space: nowrap;
+    }
+
+    .talk-equation sup,
+    .talk-equation sub,
+    .math-inline sup,
+    .math-inline sub {
+      font-size: 0.7em;
+      line-height: 0;
+    }
+
     .course-card {
       grid-column: 1 / -1;
       display: grid;
@@ -696,14 +850,6 @@
       font-family: var(--sans);
       font-size: 0.65em;
       font-weight: 500;
-    }
-
-    .course-affiliation {
-      margin: -15px 0 24px;
-      color: var(--ink-soft);
-      font-family: var(--sans);
-      font-size: 12px;
-      letter-spacing: 0.04em;
     }
 
     .course-description {
@@ -1375,6 +1521,15 @@
         grid-template-columns: 1fr;
       }
 
+      .talk-card {
+        grid-template-columns: 1fr;
+      }
+
+      .talk-heading {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
       .course-reading {
         border-top: 1px solid var(--line);
         border-left: 0;
@@ -1615,6 +1770,24 @@
         min-height: 285px;
       }
 
+      .talk-heading,
+      .talk-abstract {
+        padding: 29px 22px;
+      }
+
+      .talk-card .card-type {
+        margin-bottom: 34px;
+      }
+
+      .talk-speaker {
+        flex-wrap: wrap;
+      }
+
+      .talk-equation {
+        margin-inline: -2px;
+        padding: 13px 14px;
+      }
+
       .card-type {
         margin-bottom: 46px;
       }
@@ -1735,6 +1908,7 @@
       }
 
       .announcement-card,
+      .talk-card,
       .course-card,
       .schedule-intro,
       .schedule-table-wrap {
@@ -1971,7 +2145,6 @@
                   <span class="course-instructor-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
-              <p class="course-affiliation">哈尔滨工业大学数学研究院</p>
               <p class="course-description">
                 本课程介绍实双曲空间上的调和分析及其在薛定谔方程中的应用：
                 从演化算子卷积核的逐点估计与色散估计出发，建立 Strichartz 估计并讨论半线性问题；
@@ -2196,7 +2369,6 @@
                   <span class="course-instructor-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
-              <p class="course-affiliation">加州大学圣塔芭芭拉分校</p>
               <p class="course-description">
                 本课程介绍 Yamabe 型流中的长期收敛与冒泡分析。
                 首先以 Brendle 的 Yamabe 流收敛定理为主线，讲解能量单调性、
@@ -2281,17 +2453,119 @@
           </div>
         </div>
 
-        <article class="announcement-card reveal">
-          <div class="card-type">
-            <span>Invited Talks</span>
-            <span class="card-index">T</span>
-          </div>
-          <span class="status">Coming soon</span>
-          <h3>邀请报告信息即将公布</h3>
-          <p>
-            报告题目、报告人、所在单位、报告摘要与个人主页链接将在确认后更新。
-          </p>
-        </article>
+        <div class="talks-list">
+          <article class="talk-card reveal">
+            <header class="talk-heading">
+              <div class="card-type">
+                <span>Invited Talk 01</span>
+                <span class="card-index">01</span>
+              </div>
+              <p class="talk-speaker">
+                <span>Speaker · 报告人</span>
+                <strong>王云翔</strong>
+              </p>
+              <h3 lang="en">
+                Sharp <span class="math-inline"><i>L</i><sup>p</sup></span>-Estimates
+                for Wave Equation on
+                <span class="math-inline"><i>ax</i>+<i>b</i></span> Groups
+              </h3>
+            </header>
+
+            <div class="talk-abstract">
+              <span class="talk-abstract-label">Abstract · 摘要</span>
+              <p lang="en">
+                In this talk we discuss the
+                <span class="math-inline"><i>L</i><sup>p</sup></span>-estimates
+                for wave equation on the <i>n</i>-dimensional
+                <span class="math-inline"><i>ax</i>+<i>b</i></span> group
+                <span class="math-inline">
+                  <i>G</i> := ℝ<sub>+</sub> ⋉ ℝ<sup><i>n</i>−1</sup>
+                </span>.
+                Let <span class="math-inline">dρ</span> be the right Haar measure
+                and <i>L</i> be the positive definite distinguished Laplacian on
+                <i>G</i>. Let <i>u</i> = <i>u</i>(<i>t</i>, ·) be the solution to
+              </p>
+              <div
+                class="talk-equation"
+                role="math"
+                aria-label="partial t t u plus L u equals zero; u at time zero equals f; partial t u at time zero equals zero"
+              >
+                <span class="math-expression">∂<sub><i>tt</i></sub><i>u</i> + <i>Lu</i> = 0,</span>
+                <span class="math-expression"><i>u</i>(0, ·) = <i>f</i>,</span>
+                <span class="math-expression">∂<sub><i>t</i></sub><i>u</i>(0, ·) = 0.</span>
+              </div>
+              <p lang="en">
+                We show that for
+                <span class="math-inline"><i>t</i> ∈ ℝ ∖ {0}</span>,
+                <span class="math-inline"><i>α</i> ∈ ℝ</span> and
+                <span class="math-inline">1 &lt; <i>p</i> &lt; ∞</span>,
+              </p>
+              <div
+                class="talk-equation"
+                role="math"
+                aria-label="the L p norm of u at time t is bounded by one plus the absolute value of t to twice the absolute value of one over p minus one half, times the L p alpha norm of f"
+              >
+                <span class="math-expression">
+                  ‖<i>u</i>(<i>t</i>, ·)‖<sub><i>L</i><sup><i>p</i></sup>(dρ)</sub>
+                  ≲<sub><i>p</i></sub>
+                  (1 + |<i>t</i>|)<sup>2|1/<i>p</i>−1/2|</sup>
+                  ‖<i>f</i>‖<sub><i>L</i><sup><i>p</i></sup><sub><i>α</i></sub>(dρ)</sub>
+                </span>
+              </div>
+              <p lang="en">holds if and only if</p>
+              <div
+                class="talk-equation"
+                role="math"
+                aria-label="alpha is greater than or equal to n minus one times the absolute value of one over p minus one half"
+              >
+                <span class="math-expression">
+                  <i>α</i> ≥ (<i>n</i>−1)|1/<i>p</i>−1/2|.
+                </span>
+              </div>
+              <p lang="en">
+                This gives an endpoint result conjectured by Müller and Thiele.
+              </p>
+            </div>
+          </article>
+
+          <article class="talk-card reveal">
+            <header class="talk-heading">
+              <div class="card-type">
+                <span>Invited Talk 02</span>
+                <span class="card-index">02</span>
+              </div>
+              <p class="talk-speaker">
+                <span>Speaker · 报告人</span>
+                <strong>曲华迪</strong>
+              </p>
+              <h3 lang="en">
+                Spin number of symplectic diffeomorphisms and applications
+              </h3>
+            </header>
+
+            <div class="talk-abstract">
+              <span class="talk-abstract-label">Abstract · 摘要</span>
+              <p lang="en">
+                In this talk, we discuss Ruelle rotation invariants for symplectic
+                diffeomorphisms and their applications to periodic-orbit forcing.
+                For a compact symplectic manifold admitting global symplectic
+                trivializations, we introduce a spin number that measures the
+                average rotational component of a tangent vector under the
+                dynamics. The spin number is well defined almost everywhere by
+                the Birkhoff ergodic theorem; its integration over the volume form
+                is known as the Ruelle invariant.
+              </p>
+              <p lang="en">
+                In the three-dimensional contact manifold case, this invariant
+                has found significant use in recent progress in ECH theory and
+                contact geometry. We establish a formula describing the change
+                of the Ruelle invariant under a change of trivialization and give
+                applications of this quantity to area-preserving surface
+                diffeomorphisms, especially in the case of disk diffeomorphisms.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -2429,7 +2703,7 @@
                     <span class="schedule-room">308 教室</span>
                   </td>
                   <td data-time="10:45–12:15">
-                    <span class="schedule-speaker">王云祥</span>
+                    <span class="schedule-speaker">王云翔</span>
                     <span class="schedule-room">406 教室</span>
                   </td>
                   <td data-time="14:30–15:30">
