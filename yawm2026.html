@@ -650,6 +650,16 @@
       line-height: 1.3;
     }
 
+    .course-title-en {
+      max-width: 500px;
+      margin: -5px 0 22px;
+      color: var(--gold);
+      font-family: var(--serif-en);
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.55;
+    }
+
     .course-instructor-row {
       display: flex;
       align-items: baseline;
@@ -688,12 +698,46 @@
       font-weight: 500;
     }
 
+    .course-affiliation {
+      margin: -15px 0 24px;
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
     .course-description {
       max-width: 520px;
       margin: 0;
       color: var(--ink-soft);
       font-size: 16px;
       line-height: 1.9;
+    }
+
+    .course-prerequisites {
+      max-width: 520px;
+      margin-top: 27px;
+      padding: 17px 19px 18px;
+      background: rgba(246, 241, 231, 0.62);
+      border-left: 2px solid var(--gold-light);
+    }
+
+    .course-prerequisites > span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .course-prerequisites p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.75;
     }
 
     .course-schedule-link {
@@ -771,6 +815,139 @@
 
     .reference-list cite[lang="zh-CN"] {
       font-style: normal;
+    }
+
+    .course-outline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .course-outline-item {
+      display: grid;
+      grid-template-columns: 31px minmax(0, 1fr);
+      gap: 13px;
+      padding: 15px 0;
+    }
+
+    .course-outline-item + .course-outline-item {
+      border-top: 1px solid rgba(148, 107, 61, 0.18);
+    }
+
+    .course-outline-index {
+      padding-top: 3px;
+      color: var(--gold);
+      font-family: var(--serif-en);
+      font-size: 12px;
+    }
+
+    .course-outline-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .course-outline-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .course-optional {
+      display: inline-flex;
+      margin-left: 7px;
+      padding: 2px 6px;
+      color: var(--gold);
+      background: rgba(198, 166, 119, 0.15);
+      border: 1px solid rgba(148, 107, 61, 0.2);
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      vertical-align: 0.14em;
+    }
+
+    .course-references {
+      margin-top: 27px;
+      border-top: 1px solid rgba(148, 107, 61, 0.28);
+      border-bottom: 1px solid rgba(148, 107, 61, 0.28);
+      counter-reset: reference;
+    }
+
+    .course-references summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    .course-references summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .course-references summary::marker {
+      content: "";
+    }
+
+    .course-reference-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      flex: 0 0 auto;
+      color: var(--gold);
+      border: 1px solid rgba(148, 107, 61, 0.32);
+      border-radius: 50%;
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1;
+      transition: transform 180ms ease;
+    }
+
+    .course-references[open] .course-reference-toggle {
+      transform: rotate(45deg);
+    }
+
+    .course-reference-groups {
+      padding: 7px 0 19px;
+    }
+
+    .course-reference-group + .course-reference-group {
+      margin-top: 26px;
+    }
+
+    .course-reference-group h5 {
+      margin: 0 0 3px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      line-height: 1.55;
+      text-transform: uppercase;
+    }
+
+    .course-references .reference-list {
+      counter-reset: none;
+    }
+
+    .course-references .reference-list li {
+      padding: 12px 0;
+      font-size: 13px;
+      line-height: 1.65;
     }
 
     .schedule-shell {
@@ -1460,6 +1637,15 @@
         gap: 10px;
       }
 
+      .course-outline-item {
+        grid-template-columns: 27px minmax(0, 1fr);
+        gap: 9px;
+      }
+
+      .course-prerequisites {
+        padding: 16px;
+      }
+
       .schedule-intro {
         padding: 24px 21px;
       }
@@ -1759,6 +1945,233 @@
                   </span>
                 </li>
               </ol>
+            </div>
+          </article>
+
+          <article class="course-card reveal">
+            <div class="course-overview">
+              <div class="card-type">
+                <span>Mini-course 02</span>
+                <span class="card-index">02</span>
+              </div>
+              <span class="status">课程已公布</span>
+              <h3>双曲空间及其推广上的薛定谔方程</h3>
+              <p class="course-title-en" lang="en">
+                Schrödinger Equations on Hyperbolic Spaces and Beyond
+              </p>
+              <div class="course-instructor-row">
+                <span>授课教师</span>
+                <a
+                  class="course-instructor"
+                  href="https://zhangh-w.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  张鸿伟
+                  <span class="course-instructor-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <p class="course-affiliation">哈尔滨工业大学数学研究院</p>
+              <p class="course-description">
+                本课程介绍实双曲空间上的调和分析及其在薛定谔方程中的应用：
+                从演化算子卷积核的逐点估计与色散估计出发，建立 Strichartz 估计并讨论半线性问题；
+                还将延伸至高秩非紧对称空间及部分局部对称空间。
+              </p>
+              <div class="course-prerequisites">
+                <span>Prerequisites · 先修要求</span>
+                <p>
+                  建议具备经典 Fourier 分析、群论与偏微分方程基础；
+                  熟悉 Lie 群和 Lie 代数有助于理解第 4、5 部分。
+                </p>
+              </div>
+              <a class="course-schedule-link" href="#schedule">
+                查看课程日程 <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="course-reading">
+              <span class="course-reading-label">Course Outline</span>
+              <h4>课程内容</h4>
+              <ol class="course-outline">
+                <li class="course-outline-item">
+                  <span class="course-outline-index">01</span>
+                  <div>
+                    <strong>实双曲空间上的调和分析</strong>
+                    <p>
+                      介绍实双曲空间的几何与代数结构、相应的 Fourier 分析、
+                      球函数及 Harish–Chandra <i>c</i>-函数。
+                    </p>
+                  </div>
+                </li>
+                <li class="course-outline-item">
+                  <span class="course-outline-index">02</span>
+                  <div>
+                    <strong>卷积核的逐点估计</strong>
+                    <p>运用 Fourier 分析建立薛定谔演化算子卷积核的逐点估计。</p>
+                  </div>
+                </li>
+                <li class="course-outline-item">
+                  <span class="course-outline-index">03</span>
+                  <div>
+                    <strong>色散估计、Strichartz 估计及应用</strong>
+                    <p>
+                      结合逐点核估计与 Kunze–Stein 卷积估计证明色散估计，
+                      再通过标准的 <i>TT</i><sup>*</sup> 论证建立 Strichartz 估计，
+                      并应用于半线性薛定谔方程的适定性与散射。
+                    </p>
+                  </div>
+                </li>
+                <li class="course-outline-item">
+                  <span class="course-outline-index">04</span>
+                  <div>
+                    <strong>
+                      高秩非紧对称空间
+                      <span class="course-optional">选讲</span>
+                    </strong>
+                    <p>
+                      介绍高秩空间的结构、高维 Weyl 室带来的困难，
+                      以及重心分解方法与处理 Harish–Chandra <i>c</i>-函数的基本思路。
+                    </p>
+                  </div>
+                </li>
+                <li class="course-outline-item">
+                  <span class="course-outline-index">05</span>
+                  <div>
+                    <strong>
+                      局部对称空间
+                      <span class="course-optional">选讲</span>
+                    </strong>
+                    <p>
+                      讨论离散子群及其对算子谱的影响，并介绍这一背景下
+                      Strichartz 估计的相关结果。
+                    </p>
+                  </div>
+                </li>
+              </ol>
+
+              <details class="course-references">
+                <summary>
+                  <span>完整参考文献（11 项）</span>
+                  <span class="course-reference-toggle" aria-hidden="true">+</span>
+                </summary>
+                <div class="course-reference-groups">
+                  <div class="course-reference-group">
+                    <h5>Schrödinger Equations in Euclidean Spaces</h5>
+                    <ol class="reference-list">
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          T. Cazenave, <cite>Semilinear Schrödinger Equations</cite>,
+                          Courant Lecture Notes in Mathematics, vol. 10,
+                          New York University, Courant Institute of Mathematical Sciences,
+                          New York; American Mathematical Society, Providence, RI, 2003,
+                          xiv+323 pp.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          T. Tao, <cite>Nonlinear Dispersive Equations: Local and Global Analysis</cite>,
+                          CBMS Regional Conference Series in Mathematics, vol. 106,
+                          American Mathematical Society, Providence, RI, 2006, xvi+373 pp.
+                        </span>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div class="course-reference-group">
+                    <h5>Background of Hyperbolic / Symmetric Spaces</h5>
+                    <ol class="reference-list">
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          P. B. Eberlein, <cite>Geometry of Nonpositively Curved Manifolds</cite>,
+                          Chicago Lectures in Mathematics, University of Chicago Press,
+                          Chicago, IL, 1996, vii+449 pp.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          A. W. Knapp, <cite>Lie Groups Beyond an Introduction</cite>,
+                          second edition, Progress in Mathematics, vol. 140,
+                          Birkhäuser Boston, Inc., Boston, MA, 2002, xviii+812 pp.
+                        </span>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div class="course-reference-group">
+                    <h5>Harmonic Analysis on Hyperbolic / Symmetric Spaces</h5>
+                    <ol class="reference-list">
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          W. O. Bray,
+                          <cite>Aspects of Harmonic Analysis on Real Hyperbolic Space</cite>,
+                          Lecture Notes in Pure and Applied Mathematics, vol. 157,
+                          Marcel Dekker, Inc., New York, 1994, 77–102.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          S. Helgason,
+                          <cite>
+                            Groups and Geometric Analysis: Integral Geometry,
+                            Invariant Differential Operators, and Spherical Functions
+                          </cite>,
+                          Mathematical Surveys and Monographs, vol. 83,
+                          American Mathematical Society, Providence, RI, 2000, xxii+667 pp.
+                        </span>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div class="course-reference-group">
+                    <h5>Research Papers</h5>
+                    <ol class="reference-list">
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          J.-P. Anker and V. Pierfelice,
+                          <cite>Nonlinear Schrödinger equation on real hyperbolic spaces</cite>,
+                          Ann. Inst. H. Poincaré C Anal. Non Linéaire 26 (2009),
+                          no. 5, 1853–1869.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          J.-P. Anker and H.-W. Zhang,
+                          <cite>
+                            Wave equation on general Riemannian non-compact symmetric spaces
+                          </cite>,
+                          Amer. J. Math. 146 (2024), no. 4, 983–1031.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          N. Burq, C. Guillarmou, and A. Hassell,
+                          <cite>
+                            Strichartz estimates without loss on manifolds with hyperbolic trapped geodesics
+                          </cite>,
+                          Geom. Funct. Anal. 20 (2010), no. 3, 627–656.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          A. Fotiadis, N. Mandouvalos, and M. Marias,
+                          <cite>Schrödinger equations on locally symmetric spaces</cite>,
+                          Math. Ann. 371 (2018), no. 3–4, 1351–1374.
+                        </span>
+                      </li>
+                      <li class="course-reference-item">
+                        <span lang="en">
+                          A. D. Ionescu and G. Staffilani,
+                          <cite>
+                            Semilinear Schrödinger flows on hyperbolic spaces: scattering
+                            <i>H</i><sup>1</sup>
+                          </cite>,
+                          Math. Ann. 345 (2009), no. 1, 133–158.
+                        </span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </details>
             </div>
           </article>
         </div>
