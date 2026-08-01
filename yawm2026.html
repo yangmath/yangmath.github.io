@@ -531,6 +531,43 @@
       text-transform: uppercase;
     }
 
+    .workshop-photo {
+      margin: 64px 0 0;
+      padding: 12px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      box-shadow: var(--shadow);
+    }
+
+    .workshop-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: var(--paper-deep);
+    }
+
+    .workshop-photo figcaption {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 0;
+      padding: 17px 8px 4px;
+      color: var(--ink-soft);
+      font-family: var(--serif-cn);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .workshop-photo figcaption::before,
+    .workshop-photo figcaption::after {
+      flex: 1 1 auto;
+      height: 1px;
+      background: var(--line);
+      content: "";
+    }
+
     .programme-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1769,6 +1806,18 @@
         margin-top: 23px;
       }
 
+      .workshop-photo {
+        margin-top: 42px;
+        padding: 6px;
+      }
+
+      .workshop-photo figcaption {
+        gap: 12px;
+        padding: 13px 4px 5px;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+      }
+
       .programme-grid {
         grid-template-columns: 1fr;
       }
@@ -2061,6 +2110,18 @@
             调和分析、偏微分方程、数论、数学物理及相关方向。
           </p>
         </div>
+
+        <figure class="workshop-photo reveal">
+          <img
+            src="assets/yawm2026-group-photo.webp"
+            alt="第三届云师数学前沿讲习班参会人员合影"
+            width="1448"
+            height="1086"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>第三届云师数学前沿讲习班合影</figcaption>
+        </figure>
       </div>
     </section>
 
